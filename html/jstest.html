@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+  <html>
+  <head>
+    <title>このクラスの担任はだれですか？</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>このクラスの担任はだれですか？</h1>
+    <hr>
+    <button id="tanaka">田中先生</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('#tanaka').on('click', function(){
+          $('h1').text('正解です!');
+        });
+      })
+    </script>
+    <hr>
+        <button id="yamamoto">山本先生</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('#yamamoto').on('click', function(){
+          $('h1').text('違います!');
+        });
+      })
+      </script>
+  </body>
+  </html>

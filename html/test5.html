@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>クイズ</title>
+</head>
+<body>
+<h1>クイズwith jQuery</h1>
+問題文をクリックすると、正解が表示される。
+<hr>
+<p>ばかな人は誰ですか？</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("p").on("click",function(){
+			$("p").text("モハマド");
+		});
+	})
+</script>
+</body>
+</html>
