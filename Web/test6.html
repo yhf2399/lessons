@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello</title>
+<meta charset="utf-8">
+<style>
+.blue {
+color: blue;
+}
+.red {
+color: red;
+}
+</style>
+</head>
+<body>
+<h1>Hello</h1>
+<hr>
+<img src="01.jpg" width="300">
+<hr>
+<ul>
+<li>apple</li>
+<li>banana</li>
+<li>grape</li>
+<li>strawberry</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> $(function(){
+$("h1").on("click", function(){
+$(this).addClass("blue");
+});
+$("img").on("click", function(){
+$(this).attr("src", "01.jpg");
+});
+let apple = 1;
+$("li").on("click", function(){
+if( apple == 1 ) {
+$(this).text("Hello!").addClass("red");
+apple = 0;
+} else {
+$(this).text("apple").removeClass("red");
+apple = 1;
+}
+});
+})
+</script>
+   </body>
+   </html>
