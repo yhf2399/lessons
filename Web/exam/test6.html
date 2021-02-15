@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 </head>
 <style>
-     img{width: 200px;height: 200px;}
+     img{width: 300px;height: 300px;}
 </style>
 <body>
 </body>
@@ -22,6 +22,7 @@
 	$("img").on("click",function(){
 		num++
 		if (num>=gazo.length) {
+			num=0;
 		}
 		$("#a").attr("src",gazo[num]);
 		$("#b").attr("src",img[num]);

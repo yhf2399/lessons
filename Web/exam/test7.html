@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>slide show</title>
+</head>
+<style>
+  img{width: 300px;height: 300px;}
+</style>
+<body>
+<h1>slide show</h1>
+<img src="1.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+  const gazo=[`1.jpg`,`2.jpg`,`3.jpg`,`4.jpg`]
+  let num=0;
+  $("img").on("click",function(){
+    num++
+    if (num>3){
+      num0;
+    }
+    $("img").attr("src",gazo[num]);
+  })
+})
+</script>
+</body>
+</html>
