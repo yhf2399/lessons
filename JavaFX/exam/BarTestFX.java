@@ -37,61 +37,71 @@ stage.show();
 class BreakoutThread extends AnimationTimer{
 	private GraphicsContext gc;
 	private Ball ball;
+	private Bar bar;
 	public BreakoutThread(GraphicsContext gc){
 		this.gc = gc;
-		ball=new Ball();
+		this.ball=new Ball();
+		this.bar=new Bar();
 	}
 	@Override
 	public void handle(long time ){
-		gc.clearRect(0,0,640,480);
-		ball.draw(gc);
-		ball.move();
+			gc.clearRect(0,0,640,480);
+			ball.move();
+			ball.draw(gc);
+			bar.move();
+			bar.draw(gc);
 	}
 }
-class Ball{
-	private int x;
-	private int y;
-	private int x_speed;
-	private int y_speed;
-	public Ball(){
-		this.x=20;
-		this.y=20;
-		this.x_speed=5;
-		this.y_speed=5;
-	}
-class Bar{
-	private int xx;
-	private int yy;
-	private int xx_width;
-	private int yy_height;
-	public Bar(){
-		this.xx=20;
-		this.yy=20;
-		this.xx_width=20;
-		this.yy_height=60;
-	}
-	public void draw(GraphicsContext gc){
-		gc.setFill(Color.BLUE);
-		gc.fillOval(x,y,20,20);
-		gc.setFill(Color.RED);
-		gc.fillRect(xx,yy,20,60);
-	}
-	public void move(){
-		this.x+=this.x_speed;
-		this.y+=this.y_speed;
-	}
-}
-class Key{
-	public void keyPressed(KeyEvent e){
-		switch(e.getCode()){
-			case LEFT:
-			System.out.println("LEFT pressed");
-			break;
-			case RIGHT:
-			System.out.println("RIGHT pressed");
-			break;
-			default:
-			break;
+	class Ball{
+		private int x;
+		private int y;
+		private int x_speed;
+		private int y_speed;
+		public Ball(){
+			this.x=20;
+			this.y=20;
+			this.x_speed=5;
+			this.y_speed=5;
+		}
+		public void move(){
+			this.x+=x_speed;
+			this.y+=y_speed;
+		}
+		public void draw(GraphicsContext gc){
+			gc.setFill(Color.BLUE);
+			gc.fillOval(x,y,20,20);
 		}
 	}
-}
+	class Bar{
+		private int xx;
+		private int yy;
+		public int xx_WIDTH;
+		public int yy_HEIGHT;
+		public void Bar(){
+			this.xx=340;
+			this.yy=470;
+			this.xx_WIDTH=60;
+			this.yy_HEIGHT=20;
+		}
+		public void draw(GraphicsContext gc){
+			gc.setFill(Color.RED);
+			gc.fillRect(340,470,60,20);
+		}
+		public void move(){
+
+		}
+	}
+	class Key{
+		public void keyPressed(KeyEvent e){
+			switch(e.getCode()){
+				case LEFT:
+				System.out.println("LEFT pressed");
+				break;
+				case RIGHT:
+				System.out.println("RIGHT pressed");
+				break;
+				default:
+				break;
+			}
+		}
+	}
